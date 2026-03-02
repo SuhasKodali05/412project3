@@ -1,0 +1,130 @@
+\doxysection{Web\+Server Class Reference}
+\hypertarget{class_web_server}{}\label{class_web_server}\index{WebServer@{WebServer}}
+
+
+Represents a single server that processes at most one request at a time.  
+
+
+
+
+{\ttfamily \+\#include $<$Web\+Server.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f}{Web\+Server}} (int \doxymbox{\hyperlink{class_web_server_ad3f04f8ed4132082b46f1432f653211b}{id}})
+\begin{DoxyCompactList}\small\item\em Construct server with an ID. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_web_server_ad3f04f8ed4132082b46f1432f653211b}{id}} () const
+\begin{DoxyCompactList}\small\item\em Get server ID. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_web_server_a3dc0403ae54b9072865b36a57d7fd6a7}{is\+Idle}} () const
+\begin{DoxyCompactList}\small\item\em True if server is idle (no current request). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_web_server_ae70103749be8740e21b75b6f9cd1a9c1}{assign}} (const \doxymbox{\hyperlink{struct_request}{Request}} \&r)
+\begin{DoxyCompactList}\small\item\em Assign a request to this server (must be idle). \end{DoxyCompactList}\item 
+std::\+optional$<$ \doxymbox{\hyperlink{struct_request}{Request}} $>$ \doxymbox{\hyperlink{class_web_server_a53a7fa88d8fb4f22f073e4554f18ccec}{tick}} ()
+\begin{DoxyCompactList}\small\item\em Advance one clock cycle. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_web_server_af51f8fed2799fa5e5a170cdad19b6409}{remaining}} () const
+\begin{DoxyCompactList}\small\item\em Remaining cycles on current request (0 if idle). \end{DoxyCompactList}\item 
+std::\+optional$<$ \doxymbox{\hyperlink{struct_request}{Request}} $>$ \doxymbox{\hyperlink{class_web_server_a0747c7cca4e4630322f0c1c29c85d123}{current}} () const
+\begin{DoxyCompactList}\small\item\em Get current request if any. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single server that processes at most one request at a time. 
+
+\label{doc-constructors}
+\Hypertarget{class_web_server_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f}\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{WebServer()}{WebServer()}}
+{\footnotesize\ttfamily \label{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f} 
+Web\+Server::\+\+Web\+Server (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct server with an ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{class_web_server_ad3f04f8ed4132082b46f1432f653211b}{id}} & Server identifier \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_web_server_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_web_server_ae70103749be8740e21b75b6f9cd1a9c1}\index{WebServer@{WebServer}!assign@{assign}}
+\index{assign@{assign}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}}
+{\footnotesize\ttfamily \label{class_web_server_ae70103749be8740e21b75b6f9cd1a9c1} 
+void Web\+Server::\+assign (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_request}{Request}} \&}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Assign a request to this server (must be idle). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & \doxylink{struct_request}{Request} to process \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_web_server_a0747c7cca4e4630322f0c1c29c85d123}\index{WebServer@{WebServer}!current@{current}}
+\index{current@{current}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily \label{class_web_server_a0747c7cca4e4630322f0c1c29c85d123} 
+std::\+optional$<$ \doxymbox{\hyperlink{struct_request}{Request}} $>$ Web\+Server::\+current (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get current request if any. 
+
+\Hypertarget{class_web_server_ad3f04f8ed4132082b46f1432f653211b}\index{WebServer@{WebServer}!id@{id}}
+\index{id@{id}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{class_web_server_ad3f04f8ed4132082b46f1432f653211b} 
+int Web\+Server::\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get server ID. 
+
+\Hypertarget{class_web_server_a3dc0403ae54b9072865b36a57d7fd6a7}\index{WebServer@{WebServer}!isIdle@{isIdle}}
+\index{isIdle@{isIdle}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{isIdle()}{isIdle()}}
+{\footnotesize\ttfamily \label{class_web_server_a3dc0403ae54b9072865b36a57d7fd6a7} 
+bool Web\+Server::\+is\+Idle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+True if server is idle (no current request). 
+
+\Hypertarget{class_web_server_af51f8fed2799fa5e5a170cdad19b6409}\index{WebServer@{WebServer}!remaining@{remaining}}
+\index{remaining@{remaining}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{remaining()}{remaining()}}
+{\footnotesize\ttfamily \label{class_web_server_af51f8fed2799fa5e5a170cdad19b6409} 
+int Web\+Server::\+remaining (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Remaining cycles on current request (0 if idle). 
+
+\Hypertarget{class_web_server_a53a7fa88d8fb4f22f073e4554f18ccec}\index{WebServer@{WebServer}!tick@{tick}}
+\index{tick@{tick}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily \label{class_web_server_a53a7fa88d8fb4f22f073e4554f18ccec} 
+std::\+optional$<$ \doxymbox{\hyperlink{struct_request}{Request}} $>$ Web\+Server::\+tick (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Advance one clock cycle. 
+
+\begin{DoxyReturn}{Returns}
+An optional finished request if it completed this tick. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{_web_server_8h}{Web\+Server.\+h}}\item 
+src/\+\doxymbox{\hyperlink{_web_server_8cpp}{Web\+Server.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,205 @@
+\doxysection{Config Class Reference}
+\hypertarget{class_config}{}\label{class_config}\index{Config@{Config}}
+
+
+Reads key=value configuration from a text file.  
+
+
+
+
+{\ttfamily \+\#include $<$Config.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_config_a248244eecd6c75d6e91a88c16a2f81bb}{load}} (const std::\+string \&path, std::\+string \&err\+Msg)
+\begin{DoxyCompactList}\small\item\em Load configuration from a file. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_config_aef7102094d6c2a6a7ab8d6058d8caa6c}{is\+Blocked}} (uint32\+\_\+t ip) const
+\begin{DoxyCompactList}\small\item\em Check whether an IP is blocked by any configured range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_config_aa38088329e34bfb735902a5a05621c17}{initial\+Servers}} \{10\}
+\item 
+int \doxymbox{\hyperlink{class_config_ade11a335695846a6abef268c68ee0fb4}{min\+Servers}} \{1\}
+\item 
+int \doxymbox{\hyperlink{class_config_a2ac61f5b919061eb275c3c20f5197d8e}{total\+Cycles}} \{10000\}
+\item 
+int \doxymbox{\hyperlink{class_config_aaa43c80ca6f5629999c10977530a7e0e}{initial\+Queue\+Per\+Server}} \{100\}
+\item 
+int \doxymbox{\hyperlink{class_config_ab6a791a18b850804fe0963895b9d8c14}{low\+Queue\+Per\+Server}} \{50\}
+\item 
+int \doxymbox{\hyperlink{class_config_a3054d2fda72e5b042377fc47abd5f918}{high\+Queue\+Per\+Server}} \{80\}
+\item 
+int \doxymbox{\hyperlink{class_config_af97aa966de2c76312ede56f2240249b1}{scale\+Cooldown\+Cycles}} \{25\}
+\item 
+int \doxymbox{\hyperlink{class_config_a5ce91b12ada4af72525690bebc99075b}{arrival\+Chance\+Percent}} \{20\}
+\item 
+int \doxymbox{\hyperlink{class_config_ab6fb8979ad74ff8df7cbe357bfcb501a}{min\+Process\+Time}} \{2\}
+\item 
+int \doxymbox{\hyperlink{class_config_a2346345f34c860ef14bf666cfed277bc}{max\+Process\+Time}} \{30\}
+\item 
+int \doxymbox{\hyperlink{class_config_a13e562c579e0247cc935dfa9a88c63ce}{streaming\+Chance\+Percent}} \{30\}
+\item 
+std::\+string \doxymbox{\hyperlink{class_config_a44a998a653da4e397ef878252595f4af}{log\+File}} \{"{}lb.\+log"{}\}
+\item 
+bool \doxymbox{\hyperlink{class_config_a777b5ad61aca93400ae1895e3c75faae}{echo\+To\+Console}} \{true\}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{class_config_a293a19cb26b0c624e79e767150eede42}{rng\+Seed}} \{12345\}
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{struct_ip_range}{Ip\+Range}} $>$ \doxymbox{\hyperlink{class_config_af7b77c34cc38177931e9cdc33b29cf79}{blocked\+Ranges}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reads key=value configuration from a text file. 
+
+Supports IP block rules via:\+
+\begin{DoxyItemize}
+\item CIDR:\+ "{}192.\+168.\+0.\+0/\+24"{}
+\item Range:\+ "{}10.\+0.\+0.\+1-\/10.\+0.\+0.\+200"{}
+\item Single IP:\+ "{}8.\+8.\+8.\+8"{} 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_config_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_config_aef7102094d6c2a6a7ab8d6058d8caa6c}\index{Config@{Config}!isBlocked@{isBlocked}}
+\index{isBlocked@{isBlocked}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{isBlocked()}{isBlocked()}}
+{\footnotesize\ttfamily \label{class_config_aef7102094d6c2a6a7ab8d6058d8caa6c} 
+bool Config::\+is\+Blocked (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ip}{}\end{DoxyParamCaption}) const}
+
+
+
+Check whether an IP is blocked by any configured range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & IPv4 address as uint32 (host order) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if blocked, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_config_a248244eecd6c75d6e91a88c16a2f81bb}\index{Config@{Config}!load@{load}}
+\index{load@{load}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{class_config_a248244eecd6c75d6e91a88c16a2f81bb} 
+bool Config::\+load (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{path}{, }\item[{std::\+string \&}]{err\+Msg}{}\end{DoxyParamCaption})}
+
+
+
+Load configuration from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to config file \\
+\hline
+{\em err\+Msg} & Output error message on failure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false on failure 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_config_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_config_a5ce91b12ada4af72525690bebc99075b}\index{Config@{Config}!arrivalChancePercent@{arrivalChancePercent}}
+\index{arrivalChancePercent@{arrivalChancePercent}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{arrivalChancePercent}{arrivalChancePercent}}
+{\footnotesize\ttfamily \label{class_config_a5ce91b12ada4af72525690bebc99075b} 
+int Config::\+arrival\+Chance\+Percent \{20\}}
+
+\Hypertarget{class_config_af7b77c34cc38177931e9cdc33b29cf79}\index{Config@{Config}!blockedRanges@{blockedRanges}}
+\index{blockedRanges@{blockedRanges}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{blockedRanges}{blockedRanges}}
+{\footnotesize\ttfamily \label{class_config_af7b77c34cc38177931e9cdc33b29cf79} 
+std::\+vector$<$\doxymbox{\hyperlink{struct_ip_range}{Ip\+Range}}$>$ Config::\+blocked\+Ranges}
+
+\Hypertarget{class_config_a777b5ad61aca93400ae1895e3c75faae}\index{Config@{Config}!echoToConsole@{echoToConsole}}
+\index{echoToConsole@{echoToConsole}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{echoToConsole}{echoToConsole}}
+{\footnotesize\ttfamily \label{class_config_a777b5ad61aca93400ae1895e3c75faae} 
+bool Config::\+echo\+To\+Console \{true\}}
+
+\Hypertarget{class_config_a3054d2fda72e5b042377fc47abd5f918}\index{Config@{Config}!highQueuePerServer@{highQueuePerServer}}
+\index{highQueuePerServer@{highQueuePerServer}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{highQueuePerServer}{highQueuePerServer}}
+{\footnotesize\ttfamily \label{class_config_a3054d2fda72e5b042377fc47abd5f918} 
+int Config::\+high\+Queue\+Per\+Server \{80\}}
+
+\Hypertarget{class_config_aaa43c80ca6f5629999c10977530a7e0e}\index{Config@{Config}!initialQueuePerServer@{initialQueuePerServer}}
+\index{initialQueuePerServer@{initialQueuePerServer}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{initialQueuePerServer}{initialQueuePerServer}}
+{\footnotesize\ttfamily \label{class_config_aaa43c80ca6f5629999c10977530a7e0e} 
+int Config::\+initial\+Queue\+Per\+Server \{100\}}
+
+\Hypertarget{class_config_aa38088329e34bfb735902a5a05621c17}\index{Config@{Config}!initialServers@{initialServers}}
+\index{initialServers@{initialServers}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{initialServers}{initialServers}}
+{\footnotesize\ttfamily \label{class_config_aa38088329e34bfb735902a5a05621c17} 
+int Config::\+initial\+Servers \{10\}}
+
+\Hypertarget{class_config_a44a998a653da4e397ef878252595f4af}\index{Config@{Config}!logFile@{logFile}}
+\index{logFile@{logFile}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{logFile}{logFile}}
+{\footnotesize\ttfamily \label{class_config_a44a998a653da4e397ef878252595f4af} 
+std::\+string Config::\+log\+File \{"{}lb.\+log"{}\}}
+
+\Hypertarget{class_config_ab6a791a18b850804fe0963895b9d8c14}\index{Config@{Config}!lowQueuePerServer@{lowQueuePerServer}}
+\index{lowQueuePerServer@{lowQueuePerServer}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{lowQueuePerServer}{lowQueuePerServer}}
+{\footnotesize\ttfamily \label{class_config_ab6a791a18b850804fe0963895b9d8c14} 
+int Config::\+low\+Queue\+Per\+Server \{50\}}
+
+\Hypertarget{class_config_a2346345f34c860ef14bf666cfed277bc}\index{Config@{Config}!maxProcessTime@{maxProcessTime}}
+\index{maxProcessTime@{maxProcessTime}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{maxProcessTime}{maxProcessTime}}
+{\footnotesize\ttfamily \label{class_config_a2346345f34c860ef14bf666cfed277bc} 
+int Config::\+max\+Process\+Time \{30\}}
+
+\Hypertarget{class_config_ab6fb8979ad74ff8df7cbe357bfcb501a}\index{Config@{Config}!minProcessTime@{minProcessTime}}
+\index{minProcessTime@{minProcessTime}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{minProcessTime}{minProcessTime}}
+{\footnotesize\ttfamily \label{class_config_ab6fb8979ad74ff8df7cbe357bfcb501a} 
+int Config::\+min\+Process\+Time \{2\}}
+
+\Hypertarget{class_config_ade11a335695846a6abef268c68ee0fb4}\index{Config@{Config}!minServers@{minServers}}
+\index{minServers@{minServers}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{minServers}{minServers}}
+{\footnotesize\ttfamily \label{class_config_ade11a335695846a6abef268c68ee0fb4} 
+int Config::\+min\+Servers \{1\}}
+
+\Hypertarget{class_config_a293a19cb26b0c624e79e767150eede42}\index{Config@{Config}!rngSeed@{rngSeed}}
+\index{rngSeed@{rngSeed}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{rngSeed}{rngSeed}}
+{\footnotesize\ttfamily \label{class_config_a293a19cb26b0c624e79e767150eede42} 
+uint32\+\_\+t Config::\+rng\+Seed \{12345\}}
+
+\Hypertarget{class_config_af97aa966de2c76312ede56f2240249b1}\index{Config@{Config}!scaleCooldownCycles@{scaleCooldownCycles}}
+\index{scaleCooldownCycles@{scaleCooldownCycles}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{scaleCooldownCycles}{scaleCooldownCycles}}
+{\footnotesize\ttfamily \label{class_config_af97aa966de2c76312ede56f2240249b1} 
+int Config::\+scale\+Cooldown\+Cycles \{25\}}
+
+\Hypertarget{class_config_a13e562c579e0247cc935dfa9a88c63ce}\index{Config@{Config}!streamingChancePercent@{streamingChancePercent}}
+\index{streamingChancePercent@{streamingChancePercent}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{streamingChancePercent}{streamingChancePercent}}
+{\footnotesize\ttfamily \label{class_config_a13e562c579e0247cc935dfa9a88c63ce} 
+int Config::\+streaming\+Chance\+Percent \{30\}}
+
+\Hypertarget{class_config_a2ac61f5b919061eb275c3c20f5197d8e}\index{Config@{Config}!totalCycles@{totalCycles}}
+\index{totalCycles@{totalCycles}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{totalCycles}{totalCycles}}
+{\footnotesize\ttfamily \label{class_config_a2ac61f5b919061eb275c3c20f5197d8e} 
+int Config::\+total\+Cycles \{10000\}}
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{_config_8h}{Config.\+h}}\item 
+src/\+\doxymbox{\hyperlink{_config_8cpp}{Config.\+cpp}}\end{DoxyCompactItemize}

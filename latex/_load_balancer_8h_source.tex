@@ -1,0 +1,71 @@
+\doxysection{Load\+Balancer.\+h}
+\hypertarget{_load_balancer_8h_source}{}\label{_load_balancer_8h_source}\index{include/LoadBalancer.h@{include/LoadBalancer.h}}
+\doxymbox{\hyperlink{_load_balancer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LOADBALANCER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LOADBALANCER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_config_8h}{Config.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_logger_8h}{Logger.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_request_8h}{Request.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_web_server_8h}{WebServer.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_stats}{Stats}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_stats_a66881c610215d56a925e4d6ce8ec43ad}{generated}}\{0\};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_stats_ac10c637444f37931f6f2cba6a74f3fc2}{blocked}}\{0\};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_stats_a2798a478e2b473cb900d3d9e7c8e1e39}{queued}}\{0\};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_stats_ada730e4b0a6408203566535560454cff}{completed}}\{0\};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_stats_a1ca85b053af9a79af274a8f5addd6e2f}{addedServers}}\{0\};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_stats_afd4c6cd61da71822bb01b30a7cf8042f}{removedServers}}\{0\};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_stats_a1209191f7f730c4f37a6e428ff91efd1}{peakQueue}}\{0\};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_load_balancer_a8e11d98e4e76d9d8773213fc6b335630}{LoadBalancer}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \doxymbox{\hyperlink{class_load_balancer_a8e11d98e4e76d9d8773213fc6b335630}{LoadBalancer}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_config}{Config}}\&\ cfg,\ \doxymbox{\hyperlink{class_logger}{Logger}}\&\ logger);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_load_balancer_acb92f5bc7e71f73a4d7f5bf34bf1d7a0}{fillInitialQueue}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_load_balancer_a528909054cb20964cba1fb35ceb9003f}{run}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_stats}{Stats}}\&\ \doxymbox{\hyperlink{class_load_balancer_a7becaaa0a554b7e37d7ece20735ac2c3}{stats}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00066\ \ \ \ \ \doxymbox{\hyperlink{class_config}{Config}}\ cfg\_;}
+\DoxyCodeLine{00067\ \ \ \ \ \doxymbox{\hyperlink{class_logger}{Logger}}\&\ log\_;}
+\DoxyCodeLine{00068\ \ \ \ \ \doxymbox{\hyperlink{struct_stats}{Stats}}\ stats\_;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ std::queue<Request>\ q\_;}
+\DoxyCodeLine{00071\ \ \ \ \ std::vector<std::unique\_ptr<WebServer>>\ servers\_;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ std::mt19937\ rng\_;}
+\DoxyCodeLine{00074\ \ \ \ \ std::uniform\_int\_distribution<int>\ pct\_\{0,\ 99\};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ nextServerId\_\{1\};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ scaleCooldown\_\{0\};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \doxymbox{\hyperlink{struct_request}{Request}}\ generateRequest();}
+\DoxyCodeLine{00080\ \ \ \ \ uint32\_t\ randomIp();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ randomProcessTime();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{char}\ randomJobType();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ addServer();}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ removeServer();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ assignRequestsToIdleServers();}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ tickServers(\textcolor{keywordtype}{int}\ cycle);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ maybeGenerateNewRequest(\textcolor{keywordtype}{int}\ cycle);}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ maybeScale(\textcolor{keywordtype}{int}\ cycle);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ fmtCycle(\textcolor{keywordtype}{int}\ cycle);}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

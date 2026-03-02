@@ -1,0 +1,47 @@
+\doxysection{Logger.\+h}
+\hypertarget{_logger_8h_source}{}\label{_logger_8h_source}\index{include/Logger.h@{include/Logger.h}}
+\doxymbox{\hyperlink{_logger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LOGGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LOGGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_logger_a2d9cf48b3e7d312a453a35179ed72a87}{Logger}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \doxymbox{\hyperlink{class_logger_a2d9cf48b3e7d312a453a35179ed72a87}{Logger}}(\textcolor{keyword}{const}\ std::string\&\ filepath,\ \textcolor{keywordtype}{bool}\ echoToConsole);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \doxymbox{\hyperlink{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}{\string~Logger}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \doxymbox{\hyperlink{class_logger_add0f34d4c753c86af8074840a72366b3}{Logger}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_logger_a2d9cf48b3e7d312a453a35179ed72a87}{Logger}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00031\ \ \ \ \ \doxymbox{\hyperlink{class_logger_a2d9cf48b3e7d312a453a35179ed72a87}{Logger}}\&\ \doxymbox{\hyperlink{class_logger_a8c0ca770cdc91ca9fc3015286568e1ea}{operator=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_logger_a2d9cf48b3e7d312a453a35179ed72a87}{Logger}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_logger_afaac8d8aba7262900267f1e3779bd657}{info}}(\textcolor{keyword}{const}\ std::string\&\ msg);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_logger_adcbe6e560903cbb4257bccf546789e52}{warn}}(\textcolor{keyword}{const}\ std::string\&\ msg);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_logger_a52d98131462d3254f76fae8f43b2fa90}{error}}(\textcolor{keyword}{const}\ std::string\&\ msg);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_logger_a99ea998e7f49c4b5b971c0853b8f3a6d}{raw}}(\textcolor{keyword}{const}\ std::string\&\ msg);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_logger_a5d070ecd17570e4d3b02d5671c1e8e4e}{setEcho}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \doxymbox{\hyperlink{class_logger_a110e641b9032e9812d9646b480de307e}{green}}(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \doxymbox{\hyperlink{class_logger_a6367ed20c799f47abe8234e88f5e000f}{yellow}}(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \doxymbox{\hyperlink{class_logger_acef7d91cb2b60a0d1b30a5a04c079984}{red}}(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \doxymbox{\hyperlink{class_logger_a3c40b5341c461d0b3486a4ebb176ec6a}{cyan}}(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \doxymbox{\hyperlink{class_logger_aa55e15dd6c3714807c2a705813435496}{magenta}}(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \doxymbox{\hyperlink{class_logger_ac363474638e2f3fd46b9097a81eabe76}{dim}}(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ std::ofstream\ file\_;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ echo\_\{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ writeLine(\textcolor{keyword}{const}\ std::string\&\ line);}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

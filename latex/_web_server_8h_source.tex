@@ -1,0 +1,37 @@
+\doxysection{Web\+Server.\+h}
+\hypertarget{_web_server_8h_source}{}\label{_web_server_8h_source}\index{include/WebServer.h@{include/WebServer.h}}
+\doxymbox{\hyperlink{_web_server_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WEBSERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WEBSERVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_request_8h}{Request.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f}{WebServer}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f}{WebServer}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_web_server_ad3f04f8ed4132082b46f1432f653211b}{id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_web_server_a3dc0403ae54b9072865b36a57d7fd6a7}{isIdle}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_web_server_ae70103749be8740e21b75b6f9cd1a9c1}{assign}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_request}{Request}}\&\ r);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::optional<Request>\ \doxymbox{\hyperlink{class_web_server_a53a7fa88d8fb4f22f073e4554f18ccec}{tick}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_web_server_af51f8fed2799fa5e5a170cdad19b6409}{remaining}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ std::optional<Request>\ \doxymbox{\hyperlink{class_web_server_a0747c7cca4e4630322f0c1c29c85d123}{current}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ id\_\{0\};}
+\DoxyCodeLine{00051\ \ \ \ \ std::optional<Request>\ cur\_;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ remaining\_\{0\};}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

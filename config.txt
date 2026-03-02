@@ -1,1 +1,20 @@
+initial_servers=10
+min_servers=10
+total_cycles=10000
 
+initial_queue_per_server=100
+
+low_queue_per_server=50
+high_queue_per_server=80
+scale_cooldown_cycles=25
+
+arrival_chance_percent=20
+min_process_time=2
+max_process_time=30
+streaming_chance_percent=30
+
+log_file=lb.log
+echo_to_console=true
+rng_seed=12345
+
+blocked_ranges=192.168.0.0/24,10.0.0.1-10.0.0.50

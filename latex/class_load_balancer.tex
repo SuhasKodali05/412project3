@@ -1,0 +1,98 @@
+\doxysection{Load\+Balancer Class Reference}
+\hypertarget{class_load_balancer}{}\label{class_load_balancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+Manages a pool of Web\+Servers and a queue of Requests.  
+
+
+
+
+{\ttfamily \+\#include $<$Load\+Balancer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_load_balancer_a8e11d98e4e76d9d8773213fc6b335630}{Load\+Balancer}} (const \doxymbox{\hyperlink{class_config}{Config}} \&cfg, \doxymbox{\hyperlink{class_logger}{Logger}} \&logger)
+\begin{DoxyCompactList}\small\item\em Construct with configuration and a logger. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_load_balancer_acb92f5bc7e71f73a4d7f5bf34bf1d7a0}{fill\+Initial\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Fill initial queue of size initial\+Servers \texorpdfstring{$\ast$}{*} initial\+Queue\+Per\+Server. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_load_balancer_a528909054cb20964cba1fb35ceb9003f}{run}} ()
+\begin{DoxyCompactList}\small\item\em Run the simulation for cfg.\+total\+Cycles cycles. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{struct_stats}{Stats}} \& \doxymbox{\hyperlink{class_load_balancer_a7becaaa0a554b7e37d7ece20735ac2c3}{stats}} () const
+\begin{DoxyCompactList}\small\item\em Get statistics after running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a pool of Web\+Servers and a queue of Requests. 
+
+Responsibilities:\+
+\begin{DoxyItemize}
+\item Holds request queue
+\item Assigns requests to idle servers
+\item Advances time (clock cycles)
+\item Generates new requests at random times
+\item Dynamically scales servers to keep queue within desired range
+\item Blocks specified IP ranges (simple firewall) 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_load_balancer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_load_balancer_a8e11d98e4e76d9d8773213fc6b335630}\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}}
+{\footnotesize\ttfamily \label{class_load_balancer_a8e11d98e4e76d9d8773213fc6b335630} 
+Load\+Balancer::\+\+Load\+Balancer (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_config}{Config}} \&}]{cfg}{, }\item[{\doxymbox{\hyperlink{class_logger}{Logger}} \&}]{logger}{}\end{DoxyParamCaption})}
+
+
+
+Construct with configuration and a logger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cfg} & Configuration settings \\
+\hline
+{\em logger} & \doxylink{class_logger}{Logger} instance \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_load_balancer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_load_balancer_acb92f5bc7e71f73a4d7f5bf34bf1d7a0}\index{LoadBalancer@{LoadBalancer}!fillInitialQueue@{fillInitialQueue}}
+\index{fillInitialQueue@{fillInitialQueue}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{fillInitialQueue()}{fillInitialQueue()}}
+{\footnotesize\ttfamily \label{class_load_balancer_acb92f5bc7e71f73a4d7f5bf34bf1d7a0} 
+void Load\+Balancer::\+fill\+Initial\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Fill initial queue of size initial\+Servers \texorpdfstring{$\ast$}{*} initial\+Queue\+Per\+Server. 
+
+\Hypertarget{class_load_balancer_a528909054cb20964cba1fb35ceb9003f}\index{LoadBalancer@{LoadBalancer}!run@{run}}
+\index{run@{run}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{class_load_balancer_a528909054cb20964cba1fb35ceb9003f} 
+void Load\+Balancer::\+run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Run the simulation for cfg.\+total\+Cycles cycles. 
+
+\Hypertarget{class_load_balancer_a7becaaa0a554b7e37d7ece20735ac2c3}\index{LoadBalancer@{LoadBalancer}!stats@{stats}}
+\index{stats@{stats}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{stats()}{stats()}}
+{\footnotesize\ttfamily \label{class_load_balancer_a7becaaa0a554b7e37d7ece20735ac2c3} 
+const \doxymbox{\hyperlink{struct_stats}{Stats}} \& Load\+Balancer::\+stats (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get statistics after running. 
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{_load_balancer_8h}{Load\+Balancer.\+h}}\item 
+src/\+\doxymbox{\hyperlink{_load_balancer_8cpp}{Load\+Balancer.\+cpp}}\end{DoxyCompactItemize}

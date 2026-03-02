@@ -1,0 +1,88 @@
+\doxysection{Request Struct Reference}
+\hypertarget{struct_request}{}\label{struct_request}\index{Request@{Request}}
+
+
+Represents a simulated web request.  
+
+
+
+
+{\ttfamily \+\#include $<$Request.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::\+string \doxymbox{\hyperlink{struct_request_ad5a15b78abdb13c31c6533dc2a2fb622}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Returns human-\/readable string form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{struct_request_a522e90a46343628425bb296759b9cc0b}{ip\+In}} \{0\}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{struct_request_a7749107175bf04e6394ea86fec3cdfe0}{ip\+Out}} \{0\}
+\item 
+int \doxymbox{\hyperlink{struct_request_a3cfb576ed0b5e08612f3de8bc7cd72e2}{time}} \{0\}
+\item 
+char \doxymbox{\hyperlink{struct_request_ad49a0f18615ea50f9a11cd2494c93044}{job\+Type}} \{\textquotesingle{}P\textquotesingle{}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a simulated web request. 
+
+A \doxylink{struct_request}{Request} contains:\+
+\begin{DoxyItemize}
+\item IP in:\+ requester IP address (uint32)
+\item IP out:\+ destination/\+result IP address (uint32)
+\item time:\+ processing time in clock cycles (integer)
+\item job\+Type:\+ \textquotesingle{}P\textquotesingle{} = Processing, \textquotesingle{}S\textquotesingle{} = Streaming 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{struct_request_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_request_ad5a15b78abdb13c31c6533dc2a2fb622}\index{Request@{Request}!toString@{toString}}
+\index{toString@{toString}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{struct_request_ad5a15b78abdb13c31c6533dc2a2fb622} 
+std::\+string Request::\+to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns human-\/readable string form. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_request_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_request_a522e90a46343628425bb296759b9cc0b}\index{Request@{Request}!ipIn@{ipIn}}
+\index{ipIn@{ipIn}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{ipIn}{ipIn}}
+{\footnotesize\ttfamily \label{struct_request_a522e90a46343628425bb296759b9cc0b} 
+uint32\+\_\+t Request::\+ip\+In \{0\}}
+
+\Hypertarget{struct_request_a7749107175bf04e6394ea86fec3cdfe0}\index{Request@{Request}!ipOut@{ipOut}}
+\index{ipOut@{ipOut}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{ipOut}{ipOut}}
+{\footnotesize\ttfamily \label{struct_request_a7749107175bf04e6394ea86fec3cdfe0} 
+uint32\+\_\+t Request::\+ip\+Out \{0\}}
+
+\Hypertarget{struct_request_ad49a0f18615ea50f9a11cd2494c93044}\index{Request@{Request}!jobType@{jobType}}
+\index{jobType@{jobType}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{jobType}{jobType}}
+{\footnotesize\ttfamily \label{struct_request_ad49a0f18615ea50f9a11cd2494c93044} 
+char Request::\+job\+Type \{\textquotesingle{}P\textquotesingle{}\}}
+
+\Hypertarget{struct_request_a3cfb576ed0b5e08612f3de8bc7cd72e2}\index{Request@{Request}!time@{time}}
+\index{time@{time}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily \label{struct_request_a3cfb576ed0b5e08612f3de8bc7cd72e2} 
+int Request::\+time \{0\}}
+
+
+
+The documentation for this struct was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{_request_8h}{Request.\+h}}\item 
+src/\+\doxymbox{\hyperlink{_request_8cpp}{Request.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,197 @@
+\doxysection{Logger Class Reference}
+\hypertarget{class_logger}{}\label{class_logger}\index{Logger@{Logger}}
+
+
+Simple logger that writes to a file and optionally to console.  
+
+
+
+
+{\ttfamily \+\#include $<$Logger.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_logger_a2d9cf48b3e7d312a453a35179ed72a87}{Logger}} (const std::\+string \&filepath, bool echo\+To\+Console)
+\begin{DoxyCompactList}\small\item\em Construct logger. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}{\texorpdfstring{$\sim$}{\string~}\+Logger}} ()
+\begin{DoxyCompactList}\small\item\em Close file if open. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_logger_add0f34d4c753c86af8074840a72366b3}{Logger}} (const \doxymbox{\hyperlink{class_logger}{Logger}} \&)=delete
+\item 
+\doxymbox{\hyperlink{class_logger}{Logger}} \& \doxymbox{\hyperlink{class_logger_a8c0ca770cdc91ca9fc3015286568e1ea}{operator=}} (const \doxymbox{\hyperlink{class_logger}{Logger}} \&)=delete
+\item 
+void \doxymbox{\hyperlink{class_logger_afaac8d8aba7262900267f1e3779bd657}{info}} (const std::\+string \&msg)
+\begin{DoxyCompactList}\small\item\em Log an info message. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_logger_adcbe6e560903cbb4257bccf546789e52}{warn}} (const std::\+string \&msg)
+\begin{DoxyCompactList}\small\item\em Log a warning message. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_logger_a52d98131462d3254f76fae8f43b2fa90}{error}} (const std::\+string \&msg)
+\begin{DoxyCompactList}\small\item\em Log an error message. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_logger_a99ea998e7f49c4b5b971c0853b8f3a6d}{raw}} (const std::\+string \&msg)
+\begin{DoxyCompactList}\small\item\em Log a raw line (no prefix). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_logger_a5d070ecd17570e4d3b02d5671c1e8e4e}{set\+Echo}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Enable/\+disable console echo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std::\+string \doxymbox{\hyperlink{class_logger_a110e641b9032e9812d9646b480de307e}{green}} (const std::\+string \&s)
+\begin{DoxyCompactList}\small\item\em ANSI color helpers. \end{DoxyCompactList}\item 
+static std::\+string \doxymbox{\hyperlink{class_logger_a6367ed20c799f47abe8234e88f5e000f}{yellow}} (const std::\+string \&s)
+\item 
+static std::\+string \doxymbox{\hyperlink{class_logger_acef7d91cb2b60a0d1b30a5a04c079984}{red}} (const std::\+string \&s)
+\item 
+static std::\+string \doxymbox{\hyperlink{class_logger_a3c40b5341c461d0b3486a4ebb176ec6a}{cyan}} (const std::\+string \&s)
+\item 
+static std::\+string \doxymbox{\hyperlink{class_logger_aa55e15dd6c3714807c2a705813435496}{magenta}} (const std::\+string \&s)
+\item 
+static std::\+string \doxymbox{\hyperlink{class_logger_ac363474638e2f3fd46b9097a81eabe76}{dim}} (const std::\+string \&s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple logger that writes to a file and optionally to console. 
+
+Also supports ANSI color codes for terminal output. 
+
+\label{doc-constructors}
+\Hypertarget{class_logger_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_logger_a2d9cf48b3e7d312a453a35179ed72a87}\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{Logger()}{Logger()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_logger_a2d9cf48b3e7d312a453a35179ed72a87} 
+Logger::\+\+Logger (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filepath}{, }\item[{bool}]{echo\+To\+Console}{}\end{DoxyParamCaption})}
+
+
+
+Construct logger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Log file path \\
+\hline
+{\em echo\+To\+Console} & Print to console too \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}\index{Logger@{Logger}!````~Logger@{\texorpdfstring{$\sim$}{\string~}Logger}}
+\index{````~Logger@{\texorpdfstring{$\sim$}{\string~}Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Logger()}{\string~Logger()}}
+{\footnotesize\ttfamily \label{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a} 
+Logger::\+\texorpdfstring{$\sim$}{\string~}\+Logger (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Close file if open. 
+
+\Hypertarget{class_logger_add0f34d4c753c86af8074840a72366b3}\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{Logger()}{Logger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_logger_add0f34d4c753c86af8074840a72366b3} 
+Logger::\+\+Logger (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_logger}{Logger}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_logger_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_logger_a3c40b5341c461d0b3486a4ebb176ec6a}\index{Logger@{Logger}!cyan@{cyan}}
+\index{cyan@{cyan}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{cyan()}{cyan()}}
+{\footnotesize\ttfamily \label{class_logger_a3c40b5341c461d0b3486a4ebb176ec6a} 
+std::\+string Logger::\+cyan (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_logger_ac363474638e2f3fd46b9097a81eabe76}\index{Logger@{Logger}!dim@{dim}}
+\index{dim@{dim}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{dim()}{dim()}}
+{\footnotesize\ttfamily \label{class_logger_ac363474638e2f3fd46b9097a81eabe76} 
+std::\+string Logger::\+dim (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_logger_a52d98131462d3254f76fae8f43b2fa90}\index{Logger@{Logger}!error@{error}}
+\index{error@{error}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily \label{class_logger_a52d98131462d3254f76fae8f43b2fa90} 
+void Logger::\+error (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{msg}{}\end{DoxyParamCaption})}
+
+
+
+Log an error message. 
+
+\Hypertarget{class_logger_a110e641b9032e9812d9646b480de307e}\index{Logger@{Logger}!green@{green}}
+\index{green@{green}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{green()}{green()}}
+{\footnotesize\ttfamily \label{class_logger_a110e641b9032e9812d9646b480de307e} 
+std::\+string Logger::\+green (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+ANSI color helpers. 
+
+\Hypertarget{class_logger_afaac8d8aba7262900267f1e3779bd657}\index{Logger@{Logger}!info@{info}}
+\index{info@{info}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily \label{class_logger_afaac8d8aba7262900267f1e3779bd657} 
+void Logger::\+info (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{msg}{}\end{DoxyParamCaption})}
+
+
+
+Log an info message. 
+
+\Hypertarget{class_logger_aa55e15dd6c3714807c2a705813435496}\index{Logger@{Logger}!magenta@{magenta}}
+\index{magenta@{magenta}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{magenta()}{magenta()}}
+{\footnotesize\ttfamily \label{class_logger_aa55e15dd6c3714807c2a705813435496} 
+std::\+string Logger::\+magenta (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_logger_a8c0ca770cdc91ca9fc3015286568e1ea}\index{Logger@{Logger}!operator=@{operator=}}
+\index{operator=@{operator=}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_logger_a8c0ca770cdc91ca9fc3015286568e1ea} 
+\doxymbox{\hyperlink{class_logger}{Logger}} \& Logger::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_logger}{Logger}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_logger_a99ea998e7f49c4b5b971c0853b8f3a6d}\index{Logger@{Logger}!raw@{raw}}
+\index{raw@{raw}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{raw()}{raw()}}
+{\footnotesize\ttfamily \label{class_logger_a99ea998e7f49c4b5b971c0853b8f3a6d} 
+void Logger::\+raw (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{msg}{}\end{DoxyParamCaption})}
+
+
+
+Log a raw line (no prefix). 
+
+\Hypertarget{class_logger_acef7d91cb2b60a0d1b30a5a04c079984}\index{Logger@{Logger}!red@{red}}
+\index{red@{red}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{red()}{red()}}
+{\footnotesize\ttfamily \label{class_logger_acef7d91cb2b60a0d1b30a5a04c079984} 
+std::\+string Logger::\+red (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_logger_a5d070ecd17570e4d3b02d5671c1e8e4e}\index{Logger@{Logger}!setEcho@{setEcho}}
+\index{setEcho@{setEcho}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{setEcho()}{setEcho()}}
+{\footnotesize\ttfamily \label{class_logger_a5d070ecd17570e4d3b02d5671c1e8e4e} 
+void Logger::\+set\+Echo (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+
+
+Enable/\+disable console echo. 
+
+\Hypertarget{class_logger_adcbe6e560903cbb4257bccf546789e52}\index{Logger@{Logger}!warn@{warn}}
+\index{warn@{warn}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{warn()}{warn()}}
+{\footnotesize\ttfamily \label{class_logger_adcbe6e560903cbb4257bccf546789e52} 
+void Logger::\+warn (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{msg}{}\end{DoxyParamCaption})}
+
+
+
+Log a warning message. 
+
+\Hypertarget{class_logger_a6367ed20c799f47abe8234e88f5e000f}\index{Logger@{Logger}!yellow@{yellow}}
+\index{yellow@{yellow}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{yellow()}{yellow()}}
+{\footnotesize\ttfamily \label{class_logger_a6367ed20c799f47abe8234e88f5e000f} 
+std::\+string Logger::\+yellow (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{_logger_8h}{Logger.\+h}}\item 
+src/\+\doxymbox{\hyperlink{_logger_8cpp}{Logger.\+cpp}}\end{DoxyCompactItemize}

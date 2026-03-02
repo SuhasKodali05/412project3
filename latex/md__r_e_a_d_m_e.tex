@@ -1,0 +1,29 @@
+\chapter{412project3 }
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{412project3@{412project3}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Project 3 — Load Balancer (LB)}{Project 3 — Load Balancer (LB)}}\label{md__r_e_a_d_m_e_autotoc_md1}
+This is a C++17 simulation of a load-\/balancing system that:\+
+\begin{DoxyItemize}
+\item Generates random requests (IP in/\+out, time in cycles, job type P/\+S)
+\item Uses a real queue ({\ttfamily std::\+queue\texorpdfstring{$<$}{<}\doxylink{struct_request}{Request}\texorpdfstring{$>$}{>}})
+\item Processes work on a configurable number of {\ttfamily \doxylink{class_web_server}{Web\+Server}} instances
+\item Dynamically adds/\+removes servers to keep the queue size between:\+
+\begin{DoxyItemize}
+\item {\bfseries{low\+\_\+queue\+\_\+per\+\_\+server \texorpdfstring{$\ast$}{*} servers}} and {\bfseries{high\+\_\+queue\+\_\+per\+\_\+server \texorpdfstring{$\ast$}{*} servers}}
+\end{DoxyItemize}
+\item Blocks configured IP ranges (CIDR or start-\/end ranges)
+\item Logs colored events to console and writes a full log + summary to {\ttfamily lb.\+log}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{\texorpdfstring{Files}{Files}}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{_request_8h}{include/\+\+Request.\+h}}, {\ttfamily \doxylink{_request_8cpp}{src/\+\+Request.\+cpp}}
+\item {\ttfamily \doxylink{_web_server_8h}{include/\+\+Web\+Server.\+h}}, {\ttfamily \doxylink{_web_server_8cpp}{src/\+\+Web\+Server.\+cpp}}
+\item {\ttfamily \doxylink{_load_balancer_8h}{include/\+\+Load\+Balancer.\+h}}, {\ttfamily \doxylink{_load_balancer_8cpp}{src/\+\+Load\+Balancer.\+cpp}}
+\item {\ttfamily \doxylink{_config_8h}{include/\+\+Config.\+h}}, {\ttfamily \doxylink{_config_8cpp}{src/\+\+Config.\+cpp}}
+\item {\ttfamily \doxylink{_logger_8h}{include/\+\+Logger.\+h}}, {\ttfamily \doxylink{_logger_8cpp}{src/\+\+Logger.\+cpp}}
+\item {\ttfamily \doxylink{main_8cpp}{src/\+main.\+cpp}}
+\item {\ttfamily Makefile}
+\item {\ttfamily config.\+txt}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{\texorpdfstring{Build}{Build}}\label{md__r_e_a_d_m_e_autotoc_md3}
+\`{}\`{}\`{}bash make 

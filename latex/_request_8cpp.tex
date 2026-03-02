@@ -1,0 +1,59 @@
+\doxysection{src/\+\+Request.cpp File Reference}
+\hypertarget{_request_8cpp}{}\label{_request_8cpp}\index{src/Request.cpp@{src/Request.cpp}}
+{\ttfamily \+\#include "{}Request.\+h"{}}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$stdexcept$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{_request_8cpp_a2d7da079caefb4a62bb9147cb6187c8c}{ip\+To\+Uint}} (const std::\+string \&ip)
+\begin{DoxyCompactList}\small\item\em Convert dotted-\/quad IPv4 string to uint32. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{_request_8cpp_ae02a7f07b568ead33cd137622a2f33b7}{uint\+To\+Ip}} (uint32\+\_\+t ip)
+\begin{DoxyCompactList}\small\item\em Convert uint32 IPv4 to dotted-\/quad string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{_request_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_request_8cpp_a2d7da079caefb4a62bb9147cb6187c8c}\index{Request.cpp@{Request.cpp}!ipToUint@{ipToUint}}
+\index{ipToUint@{ipToUint}!Request.cpp@{Request.cpp}}
+\doxysubsubsection{\texorpdfstring{ipToUint()}{ipToUint()}}
+{\footnotesize\ttfamily \label{_request_8cpp_a2d7da079caefb4a62bb9147cb6187c8c} 
+uint32\+\_\+t ip\+To\+Uint (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{ip}{}\end{DoxyParamCaption})}
+
+
+
+Convert dotted-\/quad IPv4 string to uint32. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & Dotted quad like "{}192.\+168.\+0.\+1"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IPv4 as uint32 (host order) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & on parse errors \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{_request_8cpp_ae02a7f07b568ead33cd137622a2f33b7}\index{Request.cpp@{Request.cpp}!uintToIp@{uintToIp}}
+\index{uintToIp@{uintToIp}!Request.cpp@{Request.cpp}}
+\doxysubsubsection{\texorpdfstring{uintToIp()}{uintToIp()}}
+{\footnotesize\ttfamily \label{_request_8cpp_ae02a7f07b568ead33cd137622a2f33b7} 
+std::\+string uint\+To\+Ip (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ip}{}\end{DoxyParamCaption})}
+
+
+
+Convert uint32 IPv4 to dotted-\/quad string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & IPv4 as uint32 (host order) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dotted quad string 
+\end{DoxyReturn}

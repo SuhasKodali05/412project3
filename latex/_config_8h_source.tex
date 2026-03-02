@@ -1,0 +1,59 @@
+\doxysection{Config.\+h}
+\hypertarget{_config_8h_source}{}\label{_config_8h_source}\index{include/Config.h@{include/Config.h}}
+\doxymbox{\hyperlink{_config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CONFIG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CONFIG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_ip_range}{IpRange}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{struct_ip_range_a03dc683a5d4e361e69a10db5b54c949e}{start}}\{0\};}
+\DoxyCodeLine{00019\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{struct_ip_range_a5839d58b515d2f961e16fc3f4252e223}{end}}\{0\};}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_config}{Config}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_config_a248244eecd6c75d6e91a88c16a2f81bb}{load}}(\textcolor{keyword}{const}\ std::string\&\ path,\ std::string\&\ errMsg);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_config_aa38088329e34bfb735902a5a05621c17}{initialServers}}\{10\};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_config_ade11a335695846a6abef268c68ee0fb4}{minServers}}\{1\};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_config_a2ac61f5b919061eb275c3c20f5197d8e}{totalCycles}}\{10000\};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_config_aaa43c80ca6f5629999c10977530a7e0e}{initialQueuePerServer}}\{100\};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_config_ab6a791a18b850804fe0963895b9d8c14}{lowQueuePerServer}}\{50\};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_config_a3054d2fda72e5b042377fc47abd5f918}{highQueuePerServer}}\{80\};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_config_af97aa966de2c76312ede56f2240249b1}{scaleCooldownCycles}}\{25\};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_config_a5ce91b12ada4af72525690bebc99075b}{arrivalChancePercent}}\{20\};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_config_ab6fb8979ad74ff8df7cbe357bfcb501a}{minProcessTime}}\{2\};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_config_a2346345f34c860ef14bf666cfed277bc}{maxProcessTime}}\{30\};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_config_a13e562c579e0247cc935dfa9a88c63ce}{streamingChancePercent}}\{30\};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \doxymbox{\hyperlink{class_config_a44a998a653da4e397ef878252595f4af}{logFile}}\{\textcolor{stringliteral}{"{}lb.log"{}}\};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_config_a777b5ad61aca93400ae1895e3c75faae}{echoToConsole}}\{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00057\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{class_config_a293a19cb26b0c624e79e767150eede42}{rngSeed}}\{12345\};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ std::vector<IpRange>\ \doxymbox{\hyperlink{class_config_af7b77c34cc38177931e9cdc33b29cf79}{blockedRanges}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_config_aef7102094d6c2a6a7ab8d6058d8caa6c}{isBlocked}}(uint32\_t\ ip)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ trim(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<std::string>\ split(\textcolor{keyword}{const}\ std::string\&\ s,\ \textcolor{keywordtype}{char}\ delim);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ parseBool(\textcolor{keyword}{const}\ std::string\&\ v,\ \textcolor{keywordtype}{bool}\&\ out);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ parseInt(\textcolor{keyword}{const}\ std::string\&\ v,\ \textcolor{keywordtype}{int}\&\ out);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ parseUint32(\textcolor{keyword}{const}\ std::string\&\ v,\ uint32\_t\&\ out);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ parseIpRangeToken(\textcolor{keyword}{const}\ std::string\&\ token,\ \doxymbox{\hyperlink{struct_ip_range}{IpRange}}\&\ outRange,\ std::string\&\ errMsg);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ parseCidr(\textcolor{keyword}{const}\ std::string\&\ token,\ \doxymbox{\hyperlink{struct_ip_range}{IpRange}}\&\ outRange,\ std::string\&\ errMsg);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ parseStartEnd(\textcolor{keyword}{const}\ std::string\&\ token,\ \doxymbox{\hyperlink{struct_ip_range}{IpRange}}\&\ outRange,\ std::string\&\ errMsg);}
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

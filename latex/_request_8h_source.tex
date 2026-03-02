@@ -1,0 +1,27 @@
+\doxysection{Request.\+h}
+\hypertarget{_request_8h_source}{}\label{_request_8h_source}\index{include/Request.h@{include/Request.h}}
+\doxymbox{\hyperlink{_request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ REQUEST\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ REQUEST\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_request}{Request}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{struct_request_a522e90a46343628425bb296759b9cc0b}{ipIn}}\{0\};}
+\DoxyCodeLine{00024\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{struct_request_a7749107175bf04e6394ea86fec3cdfe0}{ipOut}}\{0\};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_request_a3cfb576ed0b5e08612f3de8bc7cd72e2}{time}}\{0\};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}\ \doxymbox{\hyperlink{struct_request_ad49a0f18615ea50f9a11cd2494c93044}{jobType}}\{\textcolor{charliteral}{'P'}\};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ \doxymbox{\hyperlink{struct_request_ad5a15b78abdb13c31c6533dc2a2fb622}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ uint32\_t\ \doxymbox{\hyperlink{_request_8h_a2d7da079caefb4a62bb9147cb6187c8c}{ipToUint}}(\textcolor{keyword}{const}\ std::string\&\ ip);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ std::string\ \doxymbox{\hyperlink{_request_8h_ae02a7f07b568ead33cd137622a2f33b7}{uintToIp}}(uint32\_t\ ip);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
