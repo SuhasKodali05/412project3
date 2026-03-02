@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Load Balancer Design — Project 3</title>
+
+  <link rel="stylesheet" href="412style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      mermaid.initialize({ startOnLoad: true });
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="logo-top">
+  <img src="412logo.png" alt="412 Logo">
+</div>
+
+<header class="header">
+  Load Balancer Simulator — Project 3 Design
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h1>Flow Diagram</h1>
+
+    <div class="diagram-wrap">
+      <div class="mermaid">
+flowchart TD
+A[Start] --> B[Read inputs]
+B --> C[Create LoadBalancer]
+C --> D[Generate initial queue]
+D --> E[Create WebServers]
+E --> F{More cycles?}
+
+F -->|Yes| G[Generate new requests]
+G --> H[Firewall check]
+H --> I[Assign to idle servers]
+I --> J[Process one cycle]
+J --> K[Log events]
+
+K --> L{Cooldown == 0?}
+L -->|No| M[Next cycle] --> F
+L -->|Yes| N{Queue outside limits?}
+N -->|Yes| O[Add or Remove server]
+O --> M
+N -->|No| M
+
+F -->|No| P[Print summary]
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Description</h2>
+
+    <div class="desc">
+      <p>
+        The program starts by reading in inputs and then creating a load balancer object.
+        Then is the generation of the intial queue and the creation of webservers.
+      </p>
+
+      <p>
+        The next part of the system is if there is more clock cycles or not.
+        During each clock cycle, new requests can be generated and added to the queue.
+        The firewall stage blocks the requests with blocked IP addresses.
+        Idle servers take requests from the queue and process them one cycle at a time.
+      </p>
+
+      <p>
+        The load balancer monitors the queue size. If the queue becomes too large,
+        a server is added. If it becomes too small, a server is removed. A cooldown
+        period prevents too fast of scaling changes. After the final cycle, the program
+        prints a summary of activity.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
