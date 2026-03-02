@@ -1,14 +1,14 @@
-=== Log started: 2026-03-01 17:12:45 ===
-[INFO 2026-03-01 17:12:45] Config loaded. log_file=lb.log
-[INFO 2026-03-01 17:12:45] IP blocker enabled with 2 range(s).
-[INFO 2026-03-01 17:12:45] [36mInitial queue filled.[0m
-[INFO 2026-03-01 17:12:45] Starting servers: 10
-[INFO 2026-03-01 17:12:45] Starting queue size: 1000
-[INFO 2026-03-01 17:12:45] Task time range: [2, 30] cycles
-[INFO 2026-03-01 17:12:45] Starting simulation for 10000 cycles
-[INFO 2026-03-01 17:12:45] Servers initially: 10
-[INFO 2026-03-01 17:12:45] Scaling rule: keep queue between 50*servers and 80*servers
-[INFO 2026-03-01 17:12:45] Min servers: 10
+=== Log started: 2026-03-01 18:08:12 ===
+[INFO 2026-03-01 18:08:12] Config loaded. log_file=lb.log
+[INFO 2026-03-01 18:08:12] IP blocker enabled with 2 range(s).
+[INFO 2026-03-01 18:08:12] [36mInitial queue filled.[0m
+[INFO 2026-03-01 18:08:12] Starting servers: 10
+[INFO 2026-03-01 18:08:12] Starting queue size: 1000
+[INFO 2026-03-01 18:08:12] Task time range: [2, 30] cycles
+[INFO 2026-03-01 18:08:12] Starting simulation for 10000 cycles
+[INFO 2026-03-01 18:08:12] Servers initially: 10
+[INFO 2026-03-01 18:08:12] Scaling rule: keep queue between 50*servers and 80*servers
+[INFO 2026-03-01 18:08:12] Min servers: 10
 [33m[t=1] SCALE UP -> servers=11 (queue=990, high=800)[0m
 [32m[t=7] Server#1 completed Request{in=195.229.29.129, out=190.169.254.126, time=7, type=P}[0m
 [32m[t=9] Server#3 completed Request{in=76.201.11.77, out=90.81.210.166, time=9, type=P}[0m
@@ -5137,14 +5137,14 @@
 [35m[t=9994] NEW Request{in=5.152.206.137, out=95.159.214.34, time=11, type=P} (queue=1)[0m
 [32m[t=9996] Server#2 completed Request{in=194.102.212.0, out=220.144.255.137, time=6, type=P}[0m
 [2m[t=10000] STATUS servers=10 queue=0 completed=3055 blocked=0 peakQ=1000[0m
-[INFO 2026-03-01 17:12:45] Simulation ended.
+[INFO 2026-03-01 18:08:12] Simulation ended.
 
 ===== SUMMARY =====
 Total cycles: 10000
 Starting servers: 10
 Final servers: 10
-Active (busy) servers: 2
-Inactive (idle) servers: 8
+Active servers: 2
+Inactive servers: 8
 Starting queue size: 1000
 Ending queue size: 0
 Task time range: [2, 30] cycles
@@ -5162,4 +5162,4 @@ Servers added: 13
 Servers removed: 3
 ===================
 
-=== Log ended: 2026-03-01 17:12:45 ===
+=== Log ended: 2026-03-01 18:08:12 ===

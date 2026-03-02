@@ -20,6 +20,10 @@ This is a C++17 simulation of a load-balancing system that:
 - `Makefile`
 - `config.txt`
 
-## Build
+## Build / Run
+From the project root:
+
 ```bash
+make clean
 make
+./lb
